@@ -29,7 +29,7 @@ client.on("interactionCreate", async (interaction: any) => {
   if (commandName === 'convert') {
     try {
       let amount = await convert(options.getInteger("amount"), options.getString("from"), options.getString("to"), "latest")
-      await interaction.reply(`現在の${options.getInteger("amount")} ${options.getString("from")}は${amount} ${options.getString("to")}です。`)
+      await interaction.reply(`現在の${options.getInteger("amount").toUpperCase()} ${options.getString("from")}は${amount} ${options.getString("to").toUpperCase()}です。`)
     } catch (e) {
       await interaction.reply(`エラーが発生しました ${e}`)
     }
